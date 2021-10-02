@@ -32,5 +32,6 @@
 		$response["success"] = false;
 		$response["reason"] = "no item";
 		echo json_encode($response);
-	}	
+	}
+	mysqli_close($con);	
 ?>

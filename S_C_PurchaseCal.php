@@ -5,7 +5,12 @@
 	$first = $_GET["first"];
 	$last = $_GET["last"];
 
-	$result = mysqli_query($con,"SELECT p.type, SUM(p.price)s FROM (SELECT S_C_PURCHASE.*, S_C_PRODUCT.type FROM S_C_PURCHASE, S_C_PRODUCT WHERE bDate >= '$first' AND bDate <'$last' AND S_C_PURCHASE.userID = '$userID' AND S_C_PURCHASE.pCode = S_C_PRODUCT.pCode)p GROUP BY p.type");
+	$result = mysqli_query($con,"SELECT p.type, SUM(p.price)s
+	FROM 
+	(SELECT S_C_PURCHASE.*, S_C_PRODUCT.type 
+	FROM S_C_PURCHASE, S_C_PRODUCT 
+	WHERE bDate >= '$first' AND bDate <'$last' AND S_C_PURCHASE.userID = '$userID' AND S_C_PURCHASE.pCode = S_C_PRODUCT.pCode)p 
+	GROUP BY p.type");
 	
 	$response = array();
 	

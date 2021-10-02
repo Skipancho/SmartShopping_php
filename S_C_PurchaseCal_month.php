@@ -4,7 +4,12 @@
 	$userID = $_GET["userID"];
 	$year = $_GET["year"];
 
-	$result = mysqli_query($con,"SELECT MONTH (bDate) AS date, SUM(price) FROM S_C_PURCHASE WHERE userID = '$userID' AND YEAR(bDate) = $year GROUP BY date ORDER BY date");
+	$result = mysqli_query($con,
+	"SELECT MONTH (bDate) AS date, SUM(price) 
+	FROM S_C_PURCHASE 
+	WHERE userID = '$userID' AND YEAR(bDate) = $year 
+	GROUP BY date 
+	ORDER BY date");
 	
 	$response = array();
 	
