@@ -6,7 +6,7 @@
 	$pCode = $_POST["pCode"];
 	$price = $_POST["price"];
 	$amount = $_POST["amount"];
-	$bDate = $_POST["bDate"];
+	$bDate = date("Y-m-d");
 	$review = 0;
 
 	$product_amount = 0;

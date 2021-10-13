@@ -6,7 +6,7 @@
 	$userID = $_POST["userID"];
 	$score = $_POST["score"];
 	$rText = $_POST["rText"];
-	$rDate = $_POST["rDate"];
+	$rDate = date("Y-m-d");
 	$pKey = $_POST["pKey"];
 
 	$statement= mysqli_prepare($con,"INSERT INTO S_C_REVIEW VALUES(?, ?, ?, ?, ?, ?)");
